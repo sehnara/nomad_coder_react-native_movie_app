@@ -1,0 +1,11 @@
+{
+  "expo": {
+    "name": "netflax",
+    "slug": "netflax",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  },
+  "name": "netflax"
+}
