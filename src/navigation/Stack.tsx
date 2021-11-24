@@ -10,8 +10,15 @@ const ScreenThree =({navigation: {setOptions}}) => <TouchableOpacity onPress={()
 
 const Stack = () => {
    return (
-    <stack.Navigator initialRouteName={"One"}>
-        <stack.Screen name="One" component={ScreenOne}/>
+    <stack.Navigator 
+        initialRouteName={"One"} 
+        screenOptions={{
+            presentation : "modal",
+            animation : "default", 
+            headerTintColor : "pink", 
+            // headerBackTitleVisible : false
+        }}>
+        <stack.Screen name="One" component={ScreenOne} options={{title : "1"}}/>
         <stack.Screen name="Two" component={ScreenTwo}/>
         <stack.Screen name="Three" component={ScreenThree}/>
     </stack.Navigator>    
