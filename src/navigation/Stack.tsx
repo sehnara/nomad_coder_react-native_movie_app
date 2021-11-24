@@ -5,7 +5,7 @@ import { Text, TouchableOpacity } from 'react-native'
 const stack = createNativeStackNavigator();
 
 const ScreenOne =({navigation: {navigate}}) => <TouchableOpacity onPress={()=>navigate("Two")}><Text>one</Text></TouchableOpacity>
-const ScreenTwo =({navigation: {navigate}}) => <TouchableOpacity onPress={()=>navigate("Three")}><Text>two</Text></TouchableOpacity>
+const ScreenTwo =({navigation: {navigate}}) => <TouchableOpacity onPress={()=>navigate("Tab", {screen : "Tv"})}><Text>two</Text></TouchableOpacity>
 const ScreenThree =({navigation: {setOptions}}) => <TouchableOpacity onPress={()=>setOptions({title : "SEHOON"})}><Text>three</Text></TouchableOpacity>
 
 const Stack = () => {
@@ -13,12 +13,13 @@ const Stack = () => {
     <stack.Navigator 
         initialRouteName={"One"} 
         screenOptions={{
-            presentation : "modal",
+            // presentation : "modal",
+            headerBackTitleVisible : false,
             animation : "default", 
             headerTintColor : "pink", 
-            // headerBackTitleVisible : false
+            // headerBackTitleVisible : false,
         }}>
-        <stack.Screen name="One" component={ScreenOne} options={{title : "1"}}/>
+        <stack.Screen name="One" component={ScreenOne}/>
         <stack.Screen name="Two" component={ScreenTwo}/>
         <stack.Screen name="Three" component={ScreenThree}/>
     </stack.Navigator>    

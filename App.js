@@ -7,6 +7,7 @@ import { IonIcons } from "@expo/vector-icons";
 import { NavigationContainer } from "@react-navigation/native";
 import Tabs from "./src/navigation/Tabs";
 import Stack from "./src/navigation/Stack";
+import Root from "./src/navigation/Root";
 
 export default function App() {
   const [isReady, setIsReady] = useState(false);
@@ -49,7 +50,8 @@ export default function App() {
   return (
     <NavigationContainer>
       {/* <Tabs /> */}
-      <Stack />
+      {/* <Stack /> */}
+      <Root />
     </NavigationContainer>
   );
 }

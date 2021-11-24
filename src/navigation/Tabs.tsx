@@ -4,25 +4,25 @@ import { Text, View } from 'react-native'
 import Movies from '../screen/Movies'
 import Tv from '../screen/Tv'
 import Home from '../screen/Home'
+import Stack from './Stack'
 import { useColorScheme } from 'react-native';
 import { Ionicons } from '@expo/vector-icons'
 const Tab = createBottomTabNavigator();
 
 const Tabs = ()=>{
     const isDark = useColorScheme() === "dark";
-    console.log(isDark)
-    
+
     return(<Tab.Navigator 
     screenOptions={
         { tabBarStyle : {backgroundColor : isDark ? 'black':'white'} ,
         tabBarActiveTintColor : isDark ? 'white':"black", 
         tabBarInactiveTintColor:isDark ? 'tomato':"gray", 
         headerStyle : {backgroundColor : isDark ? 'black': 'white'},
-        headerTitleStyle : {color : isDark ? 'tomato':"tomato"}
+        headerTitleStyle : {color : isDark ? 'tomato':"tomato"},
+        // headerShown : false
         }}>
     <Tab.Screen name="Movies" component={Movies} options={{tabBarIcon : ({focused, color, size})=> {
-        console.log(color, focused, size)
-        return(<Ionicons name={focused ? 'film':'film-outline' } size={size} color={color} />)}, headerRight : () => <View><Text>Hello</Text></View>}}/>
+        return(<Ionicons name={focused ? 'film':'film-outline' } size={size} color={color} />)}}}/>
     <Tab.Screen name="Tv" component={Tv} options={{tabBarBadge:7, tabBarIcon : ({focused, color, size})=> {
         return <Ionicons name = {focused ? "tv" : "tv-outline"} size={size} color = {color}/>
     }}}/>
